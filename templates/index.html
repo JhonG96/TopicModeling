@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = "/static/img/icono.png" type = "image/png">
+    <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet" type="text/css" >
+    <!-- Google Fonts -->
+	<link as="font" media="all" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<!-- Bootstrap Min CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Project NLP</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="\static\img\espacio.mp4" type="video/mp4">
+      </video>
+        <!--side navbar--->
+        <div class="sidenav" id="sidenav">
+            <span class="cancel-btn" id="cancel-btn">
+                <i class="fas fa-times"></i>
+                <h1>Analize your <span>PDF</span> in just one click</h1>
+            </span>
+    
+         
+    
+        </div>
+    <div class="container">
+
+        
+        <p>Introducing "PDF Keyword Analyzer" – your go-to tool for effortlessly extracting key insights from PDF documents. Simply upload your file, and within seconds, uncover the most important keywords that encapsulate the document's content. Streamline your analysis process and make informed decisions with confidence. Try PDF Keyword Analyzer today and unlock the true potential of your documents!
+
+
+        </p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file"
+                accept="application/pdf">    
+                <button class="cargar" type="submit" >cargar archivo</button>
+            </form>
+        <br>
+        <form action="/topic" method="POST" action="{{url_for('topic')}}">
+            <button class="enviar" type="submit">Get Topic</button>
+
+        </form>
+        <section>
+        <ol>
+        {% for x in texto %}
+        <li>{{x[:1]}}</li>
+        {%endfor%}
+    </ol>
+</section>
+    </div>
+        <!-- footer -->
+        <footer class = "footer">
+            <div class = "footer-container">
+                          </div>
+        </footer>
+</body>
+</html>
