@@ -10,7 +10,7 @@ MarkupSafe==2.1.5
 nltk==3.8.1
 numpy==1.26.4
 PyPDF2==3.0.1
-Python==3.7.10
+Python==3.10.9
 regex==2023.12.25
 scipy==1.12.0
 smart-open==7.0.1
