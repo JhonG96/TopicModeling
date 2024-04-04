@@ -16,3 +16,4 @@ smart-open==7.0.1
 tqdm==4.66.2
 Werkzeug==3.0.1
 wrapt==1.16.0
+gunicorn==19.7.1
